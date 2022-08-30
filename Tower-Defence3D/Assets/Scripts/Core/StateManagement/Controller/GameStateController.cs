@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TowerDefence.Core.CoreConstants.Enums;
 using TowerDefence.Core.StateManagement.States;
+using Zenject;
 
 namespace TowerDefence.Core.StateManagement.Controller
 {
-    public class GameStateController
+    public class GameStateController : IGameStateController, IInitializable, IDisposable
     {
         private Dictionary<CoreGameStateType, IGameBaseState> _cachedStates = null;
         private IGameBaseState _currentState = null;

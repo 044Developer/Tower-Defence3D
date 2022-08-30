@@ -4,8 +4,11 @@ namespace TowerDefence.Core.StateManagement.States
 {
     public class GameWinState : GameBaseState
     {
-        public override void Initialize(GameStateController gameStateController)
+        private IGameStateController _gameStateController = null;
+        
+        public override void Initialize(IGameStateController gameStateController)
         {
+            _gameStateController = gameStateController;
         }
 
         public override void Enter()
