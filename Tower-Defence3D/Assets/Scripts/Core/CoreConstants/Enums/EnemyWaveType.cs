@@ -1,4 +1,4 @@
-﻿namespace TowerDefence.Core.Data.Enums
+﻿namespace TowerDefence.Core.CoreConstants.Enums
 {
     public enum EnemyWaveType
     {

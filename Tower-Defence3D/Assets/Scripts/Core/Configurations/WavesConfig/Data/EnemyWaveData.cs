@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using TowerDefence.Core.Data.Enums;
+using TowerDefence.Core.CoreConstants.Enums;
 
 namespace TowerDefence.Core.Configurations.WavesConfig.Data
 {
