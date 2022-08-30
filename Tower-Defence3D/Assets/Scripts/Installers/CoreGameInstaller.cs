@@ -28,9 +28,9 @@ public class CoreGameInstaller : MonoInstaller
 
     private void BindInitializeSystems()
     {
-        Container.Bind<IMapInitializeSystem>().To(x => x.AllTypes().DerivingFrom<IMapInitializeSystem>()).AsSingle();
-        Container.Bind<IWavesInitializeSystem>().To(x => x.AllTypes().DerivingFrom<IWavesInitializeSystem>()).AsSingle();
-        Container.Bind<ITowersInitializeSystem>().To(x => x.AllTypes().DerivingFrom<ITowersInitializeSystem>()).AsSingle();
+        Container.Bind<IMapInitializeSystem>().To<MapInitializeSystem>().AsSingle();
+        Container.Bind<IWavesInitializeSystem>().To<WavesInitializeSystem>().AsSingle();
+        Container.Bind<ITowersInitializeSystem>().To<TowersInitializeSystem>().AsSingle();
     }
 
     private void BindCoreGameStateController()
