@@ -1,4 +1,5 @@
 using TowerDefence.Core.Bootstrapper;
+using TowerDefence.Core.Data.RunTimeData;
 using TowerDefence.Core.StateManagement.Controller;
 using TowerDefence.Core.StateManagement.States;
 using TowerDefence.Core.Systems.MapInitSystem;
@@ -10,11 +11,19 @@ public class CoreGameInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
+        BindRuntimeData();
+        
         BindInitializeSystems();
         
         BindCoreGameStateController();
 
         BindCoreBootstrapper();
+    }
+
+    private void BindRuntimeData()
+    {
+        Container.Bind<EnemyWaypointsData>().AsSingle();
+        Container.Bind<EnemyWavesRunTimeData>().AsSingle();
     }
 
     private void BindInitializeSystems()
